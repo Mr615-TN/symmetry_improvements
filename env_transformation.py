@@ -1,12 +1,13 @@
 # this files defines transformations (rotaitons and reflection currently) for different environment 
 # it also contains a base class to easily allow extending to other environments
+import copy
 import numpy as np
 from parameters import args
 from transformation import Transformation, TransformType
-
+from spatialmath import SO3
 
 def getEnvTransform(env_name): 
-    if env_name == "InvertedPendulum-v4": 
+    if env_name == "ITER": 
         return InvertedPendulumTransforms()
     elif env_name == "Reacher-v4":
         return ReacherTransforms()
